@@ -1365,3 +1365,22 @@ if (contactForm && formSuccess) {
     cursor: pointer !important;
 }
 
+/* حذف الخط الثاني تحت عنوان السكشن */
+.section-title span::after {
+    display: none !important;
+}
+
+/* تثبيت خط واحد فقط فوق الأقسام */
+.services-section,
+.work-section {
+    border-top: 1px solid rgba(0, 200, 200, 0.7) !important;
+}
+
+/* منع أي خط إضافي */
+.services-section::before,
+.work-section::before,
+.services-section::after,
+.work-section::after {
+    display: none !important;
+    content: none !important;
+}

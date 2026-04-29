@@ -1364,27 +1364,4 @@ if (contactForm && formSuccess) {
     font-weight: 700 !important;
     cursor: pointer !important;
 }
-.form-success {
-    position: fixed;
-    bottom: 40px;
-    right: 50%;
-    transform: translateX(50%) translateY(20px);
-    background: rgba(10, 10, 10, 0.95);
-    color: #00c8c8;
-    border: 1px solid rgba(0, 200, 200, 0.3);
-    border-radius: 999px;
-    padding: 12px 22px;
-    font-size: 14px;
-    text-align: center;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition: 0.4s ease;
-    z-index: 99999;
-}
 
-.form-success.show {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(50%) translateY(0);
-}

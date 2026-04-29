@@ -1260,3 +1260,17 @@
         position: relative;
         overflow: hidden;
     }
+.form-success {
+    opacity: 0;
+    transform: translateY(8px);
+    color: #00c8c8;
+    font-size: 14px;
+    margin-top: 12px;
+    text-align: right;
+    transition: 0.4s ease;
+}
+
+.form-success.show {
+    opacity: 1;
+    transform: translateY(0);
+}

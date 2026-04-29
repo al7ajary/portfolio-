@@ -1313,3 +1313,46 @@ if (contactForm && formSuccess) {
     }, 500);
   });
 }
+/* FIX: remove double lines */
+.section-title span::after {
+    display: none !important;
+}
+
+.services-section,
+.work-section {
+    border-top: 1px solid rgba(0, 200, 200, 0.7) !important;
+    margin-top: 26px !important;
+    padding-top: 26px !important;
+}
+
+.services-grid,
+.portfolio-grid {
+    margin-top: 0 !important;
+}
+
+/* FIX: success message hidden by default */
+#formSuccess {
+    position: fixed;
+    bottom: 45px;
+    right: 50%;
+    transform: translateX(50%) translateY(20px);
+    background: rgba(10, 10, 10, 0.92);
+    color: #00c8c8;
+    border: 1px solid rgba(0, 200, 200, 0.35);
+    border-radius: 999px;
+    padding: 12px 22px;
+    font-size: 14px;
+    text-align: center;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    z-index: 100002;
+    transition: 0.45s ease;
+    box-shadow: 0 0 30px rgba(0, 200, 200, 0.25);
+}
+
+#formSuccess.show {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateX(50%) translateY(0);
+}

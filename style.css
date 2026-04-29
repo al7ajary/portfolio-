@@ -1260,28 +1260,26 @@
         position: relative;
         overflow: hidden;
     }
-.form-success {
-    position: fixed;
-    bottom: 45px;
-    right: 50%;
-    transform: translateX(50%) translateY(20px);
-    background: rgba(10, 10, 10, 0.9);
-    color: #00c8c8;
-    border: 1px solid rgba(0, 200, 200, 0.35);
-    border-radius: 999px;
-    padding: 12px 22px;
-    font-size: 14px;
-    text-align: center;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    z-index: 100002;
-    transition: 0.45s ease;
-    box-shadow: 0 0 30px rgba(0, 200, 200, 0.25);
-}
+const contactForm = document.querySelector(".contact-form");
+const formSuccess = document.querySelector("#formSuccess");
 
-.form-success.show {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(50%) translateY(0);
+if (contactForm && formSuccess) {
+
+  contactForm.addEventListener("submit", function () {
+
+    // يظهر
+    formSuccess.classList.add("show");
+
+    // يخفي بعد 3 ثواني
+    setTimeout(() => {
+      formSuccess.classList.remove("show");
+    }, 3000);
+
+    // تصفير الفورم
+    setTimeout(() => {
+      contactForm.reset();
+    }, 500);
+
+  });
+
 }

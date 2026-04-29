@@ -1283,3 +1283,12 @@ if (contactForm && formSuccess) {
   });
 
 }
+.section-title {
+    margin-top: 18px;
+    margin-bottom: 28px;
+}
+
+.services-section,
+.work-section {
+    padding-top: 22px;
+}

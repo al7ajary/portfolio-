@@ -1260,28 +1260,7 @@
         position: relative;
         overflow: hidden;
     }
-const formSuccess = document.querySelector("#formSuccess");
 
-if (contactForm && formSuccess) {
-
-  contactForm.addEventListener("submit", function () {
-
-    // يظهر
-    formSuccess.classList.add("show");
-
-    // يخفي بعد 3 ثواني
-    setTimeout(() => {
-      formSuccess.classList.remove("show");
-    }, 3000);
-
-    // تصفير الفورم
-    setTimeout(() => {
-      contactForm.reset();
-    }, 500);
-
-  });
-
-}
 .section-title {
     margin-top: 18px;
     margin-bottom: 28px;
@@ -1317,4 +1296,20 @@ if (contactForm && formSuccess) {
 .services-grid,
 .portfolio-grid {
     margin-top: 0 !important;
+}
+const contactForm = document.querySelector(".contact-form");
+const formSuccess = document.querySelector("#formSuccess");
+
+if (contactForm && formSuccess) {
+  contactForm.addEventListener("submit", function () {
+    formSuccess.classList.add("show");
+
+    setTimeout(() => {
+      formSuccess.classList.remove("show");
+    }, 3000);
+
+    setTimeout(() => {
+      contactForm.reset();
+    }, 500);
+  });
 }

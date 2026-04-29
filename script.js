@@ -102,3 +102,18 @@ if (contactForm && formSuccess) {
     }, 3000);
   });
 }
+const contactForm = document.querySelector(".contact-form");
+const formSuccess = document.querySelector("#formSuccess");
+
+if (contactForm && formSuccess) {
+  contactForm.addEventListener("submit", function () {
+    setTimeout(() => {
+      formSuccess.classList.add("show");
+      contactForm.reset();
+
+      setTimeout(() => {
+        formSuccess.classList.remove("show");
+      }, 3000);
+    }, 500);
+  });
+}

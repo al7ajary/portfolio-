@@ -102,3 +102,19 @@ if (contactForm && formSuccess) {
     }, 3000);
   });
 }
+function showFormSuccess() {
+  const message = document.getElementById("formSuccess");
+  const form = document.querySelector(".contact-form");
+
+  if (!message || !form) return;
+
+  message.classList.add("show");
+
+  setTimeout(() => {
+    message.classList.remove("show");
+  }, 3500);
+
+  setTimeout(() => {
+    form.reset();
+  }, 800);
+}

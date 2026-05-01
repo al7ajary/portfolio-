@@ -1,286 +1,217 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Ahmed Al Hajary | Videographer & AI Creator</title>
-  <meta name="description" content="Ahmed Al Hajary — freelance photographer and AI content creator crafting premium visual stories." />
+    <title>Ahmed Al Hajary | Videographer & AI Creator</title>
+    <meta name="description" content="Ahmed Al Hajary — freelance photographer and AI content creator crafting premium visual stories." />
 
-  <link rel="stylesheet" href="style.css" />
+    <link rel="preload" href="fonts/thmanyahserifdisplay-Light.otf" as="font" type="font/otf" crossorigin>
+    <link rel="preload" href="fonts/thmanyahseriftext-Light.otf" as="font" type="font/otf" crossorigin>
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-
-  <div class="loader">
-    <div class="loader-logo">
-      <img src="images/logo.png" alt="Ahmed Al Hajary Logo">
+    <div class="loader" aria-hidden="true">
+        <div class="loader-logo">
+            <img src="images/logo.png" alt="" loading="eager">
+        </div>
     </div>
-  </div>
 
-  <div class="scroll-progress"></div>
-  <div class="cursor-glow"></div>
+    <div class="scroll-progress" aria-hidden="true"></div>
+    <div class="cursor-glow" aria-hidden="true"></div>
 
-  <!-- POPUP OFFER -->
-  <div class="offer-popup" id="offerPopup">
-    <div class="offer-popup-backdrop"></div>
+    <header class="hero">
+        <nav class="navbar" aria-label="Main navigation">
+            <a class="brand" href="#top" aria-label="Ahmed Al Hajary home">
+                <div class="brand-mark logo-mark">
+                    <img src="images/logo.png" alt="Ahmed Al Hajary Logo" loading="eager">
+                </div>
+                <span>Ahmed Al Hajary</span>
+            </a>
 
-    <div class="offer-popup-box">
-      <button class="offer-close" type="button" id="closeOfferPopup">×</button>
+            <div class="nav-links">
+                <a href="#about">نبذة عني</a>
+                <a href="#services">خدماتي</a>
+                <a href="#work">أعمالي</a>
+                <a href="#contact">تواصل</a>
+            </div>
+        </nav>
 
-      <div class="offer-popup-content">
+        <section id="top" class="hero-content">
+            <div class="hero-text">
+                <p class="eyebrow">Freelance Videographer / AI Creator</p>
 
-        <div class="offer-popup-text">
-          <span class="offer-label">عرض خاص للزوار</span>
+                <h1>أصنع محتوى بصري احترافي يجمع بين التصوير، الإبداع، والذكاء الاصطناعي.</h1>
 
-          <h2>مرحباً في عالم AH الإبداعي</h2>
+                <p class="hero-description">
+                    أساعد الأفراد والعلامات التجارية على الظهور بصورة قوية، عصرية، ومميزة من خلال التصوير الاحترافي
+                    وصناعة المحتوى المدعوم بالذكاء الاصطناعي.
+                </p>
 
-          <p class="offer-intro">
-            سجّل بياناتك وخلّني أتواصل معاك بخصوص العروض الحالية والخدمات المناسبة لمشروعك.
-          </p>
+                <section class="stats-section" aria-label="Experience statistics">
+                    <div class="stat-item">
+                        <span>+10</span>
+                        <p>Years Experience</p>
+                    </div>
 
-          <div class="offer-discounts">
-            <div class="offer-discount-card main-offer">
-              <span>90%</span>
-              <p>خصم على خدمة تصميم السيارات</p>
+                    <div class="stat-item">
+                        <span>+50</span>
+                        <p>Creative Projects</p>
+                    </div>
+
+                    <div class="stat-item">
+                        <span>+30</span>
+                        <p>Clients</p>
+                    </div>
+                </section>
+
+                <div class="hero-actions">
+                    <a href="#contact" class="primary-btn">تواصل معي</a>
+                    <a href="#services" class="secondary-btn">استعرض الخدمات</a>
+                </div>
             </div>
 
-            <div class="offer-discount-card">
-              <span>25%</span>
-              <p>خصم على باقي الخدمات</p>
+            <div class="hero-visual">
+                <div class="profile-frame">
+                    <img src="images/profile.png" alt="Ahmed Al Hajary - Content Creator" loading="eager">
+                </div>
             </div>
-          </div>
+        </section>
+    </header>
 
-          <form class="popup-form"
-            action="https://docs.google.com/forms/d/e/1FAIpQLSfvgsWTYCuB0h-gVbx2XGjGvFBqDWnDsTaiS-T6JH9G6WkBrg/formResponse"
-            method="POST"
-            target="hidden_iframe"
-            onsubmit="showPopupSuccess()">
-
-            <input type="text" name="entry.1538884758" placeholder="الاسم" required>
-            <input type="text" name="entry.1924132049" placeholder="رقم التواصل" required>
-            <input type="email" name="entry.2054595693" placeholder="الإيميل" required>
-
-            <label class="popup-consent">
-              <input type="checkbox" required>
-              <span>أوافق على التواصل معي واستلام العروض الترويجية والتنبيهات.</span>
-            </label>
-
-            <p class="popup-note">
-              سيتم التواصل معك قريباً بخصوص العرض والخدمة المناسبة لك.
+    <main>
+        <section id="about" class="section about-section">
+            <h2 class="section-title">
+                <span>ABOUT</span>
+                <span class="dash">|</span>
+                <span>نبذة عني</span>
+            </h2>
+            <p>
+                أنا أحمد الحجري، مصور فريلانس وصانع محتوى أدمج بين التصوير الاحترافي، الرؤية الإبداعية، وأدوات الذكاء
+                الاصطناعي لصناعة محتوى بصري يلفت الانتباه ويترك أثر.
             </p>
-
-            <button type="submit">أرسل بياناتي</button>
-
-            <div class="popup-success" id="popupSuccess">
-              تم استلام بياناتك، سيتم التواصل معك قريباً.
-            </div>
-          </form>
-        </div>
-
-        <div class="offer-popup-image">
-          <img src="images/popup-offer.png" alt="AH Special Offer" onerror="this.parentElement.classList.add('no-image')">
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <header class="hero">
-    <nav class="navbar">
-      <div class="brand">
-        <div class="brand-mark logo-mark">
-          <img src="images/logo.png" alt="Ahmed Al Hajary Logo">
-        </div>
-        <span>Ahmed Al Hajary</span>
-      </div>
-
-      <div class="nav-links">
-        <a href="#about">نبذة عني</a>
-        <a href="#services">خدماتي</a>
-        <a href="#work">أعمالي</a>
-        <a href="#contact">تواصل</a>
-      </div>
-    </nav>
-
-    <section class="hero-content">
-      <div class="hero-text">
-        <p class="eyebrow">Freelance Videographer / AI Creator</p>
-
-        <h1>
-          أصنع محتوى بصري احترافي يجمع بين التصوير، الإبداع، والذكاء الاصطناعي.
-        </h1>
-
-        <p class="hero-description">
-          أساعد الأفراد والعلامات التجارية على الظهور بصورة قوية، عصرية، ومميزة من خلال التصوير الاحترافي وصناعة المحتوى المدعوم بالذكاء الاصطناعي.
-        </p>
-
-        <section class="stats-section">
-          <div class="stat-item">
-            <span>+10</span>
-            <p>Years Experience</p>
-          </div>
-
-          <div class="stat-item">
-            <span>+50</span>
-            <p>Creative Projects</p>
-          </div>
-
-          <div class="stat-item">
-            <span>+30</span>
-            <p>Clients</p>
-          </div>
         </section>
 
-        <div class="hero-actions">
-          <a href="#contact" class="primary-btn">تواصل معي</a>
-          <a href="#services" class="secondary-btn">استعرض الخدمات</a>
+        <section id="services" class="section services-section">
+            <h2 class="section-title">
+                <span>SERVICES</span>
+                <span class="dash">|</span>
+                <span>خدماتي</span>
+            </h2>
+
+            <div class="services-grid">
+                <article class="service-card">
+                    <span>01</span>
+                    <h3>تصوير شخصي واحترافي</h3>
+                    <p>جلسات بورتريه، صور شخصية، وصور احترافية للحسابات والمنصات الرقمية.</p>
+                </article>
+
+                <article class="service-card">
+                    <span>02</span>
+                    <h3>تصوير تجاري</h3>
+                    <p>تصوير منتجات، مطاعم، فعاليات، ومحتوى بصري للعلامات التجارية.</p>
+                </article>
+
+                <article class="service-card">
+                    <span>03</span>
+                    <h3>محتوى بالذكاء الاصطناعي</h3>
+                    <p>أفكار إبداعية، صور AI، تصاميم، ومحتوى بصري متطور للسوشيال ميديا.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="work" class="section work-section">
+            <h2 class="section-title">
+                <span>SELECTED WORKS</span>
+                <span class="dash">|</span>
+                <span>أعمال مختارة</span>
+            </h2>
+            <p>نماذج مختارة من التصوير، صناعة المحتوى، والمشاريع الإبداعية المدعومة بالذكاء الاصطناعي.</p>
+
+            <div class="portfolio-grid">
+                <article class="portfolio-card large" aria-label="Portrait Sessions">
+                    <div class="portfolio-overlay">
+                        <span>Photography</span>
+                        <h3>Portrait Sessions</h3>
+                        <p>جلسات تصوير شخصية بأسلوب سينمائي واحترافي.</p>
+                    </div>
+                </article>
+
+                <article class="portfolio-card" aria-label="Brand Content">
+                    <div class="portfolio-overlay">
+                        <span>Commercial</span>
+                        <h3>Brand Content</h3>
+                        <p>محتوى بصري للعلامات التجارية والسوشيال ميديا.</p>
+                    </div>
+                </article>
+
+                <article class="portfolio-card" aria-label="AI Visuals">
+                    <div class="portfolio-overlay">
+                        <span>AI Content</span>
+                        <h3>AI Visuals</h3>
+                        <p>صور وأفكار بصرية باستخدام الذكاء الاصطناعي.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact-section">
+            <div class="contact-layout">
+                <div class="contact-info">
+                    <h2>خلّنا نشتغل على فكرتك القادمة</h2>
+                    <p class="contact-highlight">جاهز نحول فكرتك إلى محتوى بصري احترافي؟ تـــواصل معي</p>
+
+                    <div class="social-links">
+                        <a href="https://instagram.com/al7ajary" target="_blank" rel="noopener noreferrer">Instagram</a>
+                        <a href="https://tiktok.com/@al7ajary" target="_blank" rel="noopener noreferrer">TikTok</a>
+                        <a href="https://wa.me/973336400463" target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
+                            <span>Whatsapp</span>
+                        </a>
+                    </div>
+                </div>
+
+                <form class="contact-form"
+                      action="https://docs.google.com/forms/d/e/1FAIpQLSfvgsWTYCuB0h-gVbx2XGjGvFBqDWnDsTaiS-T6JH9G6WkBrg/formResponse"
+                      method="POST"
+                      target="hidden_iframe">
+                    <label class="sr-only" for="name">Name</label>
+                    <input id="name" type="text" name="entry.1538884758" placeholder="Name" autocomplete="name" required>
+
+                    <label class="sr-only" for="phone">Contact Number</label>
+                    <input id="phone" type="tel" name="entry.1924132049" placeholder="Contact Number" autocomplete="tel" required>
+
+                    <label class="sr-only" for="email">E-Mail</label>
+                    <input id="email" type="email" name="entry.2054595693" placeholder="E-Mail" autocomplete="email" required>
+
+                    <label class="sr-only" for="enquiry">Your Enquiry</label>
+                    <textarea id="enquiry" name="entry.1048904571" placeholder="Your Enquiry" required></textarea>
+
+                    <button type="submit">Send</button>
+                    <p id="formSuccess" class="form-success" role="status" aria-live="polite">
+                        تم ارسال الرسالة، سيتم التواصل معكم قريباً، ويمكنكم التواصل معي عبر الواتساب في أي وقت على رقم +973336400463
+                    </p>
+                </form>
+
+                <iframe name="hidden_iframe" title="Contact form submission" class="hidden-iframe"></iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-line"></div>
+
+        <div class="footer-brand">
+            <img src="images/logo.png" alt="Ahmed Al Hajary Logo" loading="lazy">
         </div>
-      </div>
 
-      <div class="hero-visual">
-        <div class="profile-frame">
-          <img src="images/profile.png" alt="Ahmed Al Hajary - Content Creator">
-        </div>
-      </div>
-    </section>
-  </header>
+        <p class="footer-tagline">CREATED FOR VISUAL IMPACT</p>
+        <p class="footer-credit">INSTAGRAM: AL7AJARY — 2026</p>
+    </footer>
 
-  <main>
-
-    <section id="about" class="section about-section">
-      <h2 class="section-title">
-        <span>ABOUT</span>
-        <span class="dash">|</span>
-        <span>نبذة عني</span>
-      </h2>
-
-      <p>
-        أنا أحمد الحجري، مصور فريلانس وصانع محتوى أدمج بين التصوير الاحترافي، الرؤية الإبداعية، وأدوات الذكاء الاصطناعي لصناعة محتوى بصري يلفت الانتباه ويترك أثر.
-      </p>
-    </section>
-
-    <section id="services" class="section services-section">
-      <h2 class="section-title">
-        <span>SERVICES</span>
-        <span class="dash">|</span>
-        <span>خدماتي</span>
-      </h2>
-
-      <div class="services-grid">
-        <div class="service-card">
-          <span>01</span>
-          <h3>تصوير شخصي واحترافي</h3>
-          <p>جلسات بورتريه، صور شخصية، وصور احترافية للحسابات والمنصات الرقمية.</p>
-        </div>
-
-        <div class="service-card">
-          <span>02</span>
-          <h3>تصوير تجاري</h3>
-          <p>تصوير منتجات، مطاعم، فعاليات، ومحتوى بصري للعلامات التجارية.</p>
-        </div>
-
-        <div class="service-card">
-          <span>03</span>
-          <h3>محتوى بالذكاء الاصطناعي</h3>
-          <p>أفكار إبداعية، صور AI، تصاميم، ومحتوى بصري متطور للسوشيال ميديا.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="work" class="section work-section">
-      <h2 class="section-title">
-        <span>SELECTED WORKS</span>
-        <span class="dash">|</span>
-        <span>أعمال مختارة</span>
-      </h2>
-
-      <p>
-        نماذج مختارة من التصوير، صناعة المحتوى، والمشاريع الإبداعية المدعومة بالذكاء الاصطناعي.
-      </p>
-
-      <div class="portfolio-grid">
-        <div class="portfolio-card large">
-          <div class="portfolio-overlay">
-            <span>Photography</span>
-            <h3>Portrait Sessions</h3>
-            <p>جلسات تصوير شخصية بأسلوب سينمائي واحترافي.</p>
-          </div>
-        </div>
-
-        <div class="portfolio-card">
-          <div class="portfolio-overlay">
-            <span>Commercial</span>
-            <h3>Brand Content</h3>
-            <p>محتوى بصري للعلامات التجارية والسوشيال ميديا.</p>
-          </div>
-        </div>
-
-        <div class="portfolio-card">
-          <div class="portfolio-overlay">
-            <span>AI Content</span>
-            <h3>AI Visuals</h3>
-            <p>صور وأفكار بصرية باستخدام الذكاء الاصطناعي.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="section contact-section">
-      <div class="contact-layout">
-
-        <div class="contact-info">
-          <h2>خلّنا نشتغل على فكرتك القادمة</h2>
-
-          <p class="contact-highlight">
-            جاهز نحول فكرتك إلى محتوى بصري احترافي؟ تواصل معي
-          </p>
-
-          <div class="social-links">
-            <a href="https://instagram.com/al7ajary" target="_blank" rel="noopener">Instagram</a>
-            <a href="https://tiktok.com/@al7ajary" target="_blank" rel="noopener">TikTok</a>
-            <a href="https://wa.me/973336400463" target="_blank" rel="noopener" class="whatsapp-btn">
-              <span>Whatsapp</span>
-            </a>
-          </div>
-        </div>
-
-        <form class="contact-form"
-          action="https://docs.google.com/forms/d/e/1FAIpQLSfvgsWTYCuB0h-gVbx2XGjGvFBqDWnDsTaiS-T6JH9G6WkBrg/formResponse"
-          method="POST"
-          target="hidden_iframe"
-          onsubmit="showFormSuccess()">
-
-          <input type="text" name="entry.1538884758" placeholder="Name" required>
-          <input type="text" name="entry.1924132049" placeholder="Contact Number" required>
-          <input type="email" name="entry.2054595693" placeholder="E-Mail" required>
-          <textarea name="entry.1048904571" placeholder="Your Enquiry" required></textarea>
-
-          <button type="submit">Send</button>
-
-          <div class="form-success" id="formSuccess">
-            تم ارسال الرسالة، سيتم التواصل معكم قريباً، ويمكنكم التواصل معي عبر الواتساب في أي وقت على رقم +973336400463
-          </div>
-        </form>
-
-        <iframe name="hidden_iframe" style="display:none;"></iframe>
-
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-    <div class="footer-line"></div>
-
-    <div class="footer-brand">
-      <img src="images/logo.png" alt="Ahmed Al Hajary Logo">
-    </div>
-
-    <p class="footer-tagline">CREATED FOR VISUAL IMPACT</p>
-    <p class="footer-credit">INSTAGRAM: AL7AJARY — 2026</p>
-  </footer>
-
-  <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
+
 </html>

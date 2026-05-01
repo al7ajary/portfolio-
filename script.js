@@ -102,3 +102,27 @@
         });
     }
 })();
+// تشغيل popup بعد دخول الموقع
+window.addEventListener("load", () => {
+    const popup = document.getElementById("offerPopup");
+
+    setTimeout(() => {
+        popup.classList.add("active");
+    }, 1200);
+});
+
+// اغلاق popup
+document.getElementById("closeOfferPopup").addEventListener("click", () => {
+    document.getElementById("offerPopup").classList.remove("active");
+});
+
+// نجاح الفورم داخل popup
+function showPopupSuccess() {
+    const msg = document.getElementById("popupSuccess");
+
+    msg.classList.add("show");
+
+    setTimeout(() => {
+        msg.classList.remove("show");
+    }, 3000);
+}

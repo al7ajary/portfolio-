@@ -1171,3 +1171,14 @@ body::before {
 .form-success.show {
     display: block;
 }
+.form-success {
+    display: none;
+    margin-top: 14px;
+    color: #00c8c8;
+    font-size: 14px;
+    text-align: right;
+}
+
+.form-success.show {
+    display: block;
+}

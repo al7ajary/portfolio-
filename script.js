@@ -1160,14 +1160,19 @@ body::before {
         letter-spacing: 2px;
     }
 }
-.form-success {
-    display: none;
-    margin-top: 14px;
-    color: #00c8c8;
-    font-size: 14px;
-    text-align: right;
-}
+function showFormSuccess() {
+  const message = document.getElementById("formSuccess");
+  const form = document.querySelector(".contact-form");
 
-.form-success.show {
-    display: block;
+  if (!message) return;
+
+  message.classList.add("show");
+
+  setTimeout(() => {
+    message.classList.remove("show");
+  }, 3000);
+
+  setTimeout(() => {
+    if (form) form.reset();
+  }, 500);
 }

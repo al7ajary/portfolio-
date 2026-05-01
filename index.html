@@ -6,28 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Ahmed Al Hajary | Videographer & AI Creator</title>
-    <meta name="description"
-        content="Ahmed Al Hajary — freelance photographer and AI content creator crafting premium visual stories." />
+    <meta name="description" content="Ahmed Al Hajary — freelance photographer and AI content creator crafting premium visual stories." />
 
+    <link rel="preload" href="fonts/thmanyahserifdisplay-Light.otf" as="font" type="font/otf" crossorigin>
+    <link rel="preload" href="fonts/thmanyahseriftext-Light.otf" as="font" type="font/otf" crossorigin>
     <link rel="stylesheet" href="style.css" />
 </head>
-<div class="loader">
-    <div class="loader-logo">
-        <img src="images/logo.png" alt="Ahmed Al Hajary Logo">
-    </div>
-</div>
-<div class="scroll-progress"></div>
 
 <body>
+    <div class="loader" aria-hidden="true">
+        <div class="loader-logo">
+            <img src="images/logo.png" alt="" loading="eager">
+        </div>
+    </div>
+
+    <div class="scroll-progress" aria-hidden="true"></div>
+    <div class="cursor-glow" aria-hidden="true"></div>
 
     <header class="hero">
-        <nav class="navbar">
-            <div class="brand">
+        <nav class="navbar" aria-label="Main navigation">
+            <a class="brand" href="#top" aria-label="Ahmed Al Hajary home">
                 <div class="brand-mark logo-mark">
-                    <img src="images/logo.png" alt="Ahmed Al Hajary Logo">
+                    <img src="images/logo.png" alt="Ahmed Al Hajary Logo" loading="eager">
                 </div>
                 <span>Ahmed Al Hajary</span>
-            </div>
+            </a>
 
             <div class="nav-links">
                 <a href="#about">نبذة عني</a>
@@ -37,19 +40,18 @@
             </div>
         </nav>
 
-        <section class="hero-content">
+        <section id="top" class="hero-content">
             <div class="hero-text">
                 <p class="eyebrow">Freelance Videographer / AI Creator</p>
 
-                <h1>
-                    أصنع محتوى بصري احترافي يجمع بين التصوير، الإبداع، والذكاء الاصطناعي.
-                </h1>
+                <h1>أصنع محتوى بصري احترافي يجمع بين التصوير، الإبداع، والذكاء الاصطناعي.</h1>
 
                 <p class="hero-description">
                     أساعد الأفراد والعلامات التجارية على الظهور بصورة قوية، عصرية، ومميزة من خلال التصوير الاحترافي
                     وصناعة المحتوى المدعوم بالذكاء الاصطناعي.
                 </p>
-                <section class="stats-section">
+
+                <section class="stats-section" aria-label="Experience statistics">
                     <div class="stat-item">
                         <span>+10</span>
                         <p>Years Experience</p>
@@ -74,15 +76,13 @@
 
             <div class="hero-visual">
                 <div class="profile-frame">
-                    <img src="images/profile.png" alt="Ahmed Al Hajary - Content Creator">
+                    <img src="images/profile.png" alt="Ahmed Al Hajary - Content Creator" loading="eager">
                 </div>
             </div>
         </section>
     </header>
 
-
     <main>
-
         <section id="about" class="section about-section">
             <h2 class="section-title">
                 <span>ABOUT</span>
@@ -103,23 +103,23 @@
             </h2>
 
             <div class="services-grid">
-                <div class="service-card">
+                <article class="service-card">
                     <span>01</span>
                     <h3>تصوير شخصي واحترافي</h3>
                     <p>جلسات بورتريه، صور شخصية، وصور احترافية للحسابات والمنصات الرقمية.</p>
-                </div>
+                </article>
 
-                <div class="service-card">
+                <article class="service-card">
                     <span>02</span>
                     <h3>تصوير تجاري</h3>
                     <p>تصوير منتجات، مطاعم، فعاليات، ومحتوى بصري للعلامات التجارية.</p>
-                </div>
+                </article>
 
-                <div class="service-card">
+                <article class="service-card">
                     <span>03</span>
                     <h3>محتوى بالذكاء الاصطناعي</h3>
                     <p>أفكار إبداعية، صور AI، تصاميم، ومحتوى بصري متطور للسوشيال ميديا.</p>
-                </div>
+                </article>
             </div>
         </section>
 
@@ -129,89 +129,89 @@
                 <span class="dash">|</span>
                 <span>أعمال مختارة</span>
             </h2>
-            نماذج مختارة من التصوير، صناعة المحتوى، والمشاريع الإبداعية المدعومة بالذكاء الاصطناعي.
-            </p>
+            <p>نماذج مختارة من التصوير، صناعة المحتوى، والمشاريع الإبداعية المدعومة بالذكاء الاصطناعي.</p>
 
             <div class="portfolio-grid">
-                <div class="portfolio-card large">
+                <article class="portfolio-card large" aria-label="Portrait Sessions">
                     <div class="portfolio-overlay">
                         <span>Photography</span>
                         <h3>Portrait Sessions</h3>
                         <p>جلسات تصوير شخصية بأسلوب سينمائي واحترافي.</p>
                     </div>
-                </div>
+                </article>
 
-                <div class="portfolio-card">
+                <article class="portfolio-card" aria-label="Brand Content">
                     <div class="portfolio-overlay">
                         <span>Commercial</span>
                         <h3>Brand Content</h3>
                         <p>محتوى بصري للعلامات التجارية والسوشيال ميديا.</p>
                     </div>
-                </div>
+                </article>
 
-                <div class="portfolio-card">
+                <article class="portfolio-card" aria-label="AI Visuals">
                     <div class="portfolio-overlay">
                         <span>AI Content</span>
                         <h3>AI Visuals</h3>
                         <p>صور وأفكار بصرية باستخدام الذكاء الاصطناعي.</p>
                     </div>
-                </div>
+                </article>
             </div>
         </section>
 
         <section id="contact" class="section contact-section">
             <div class="contact-layout">
-
                 <div class="contact-info">
                     <h2>خلّنا نشتغل على فكرتك القادمة</h2>
-                    <p class="contact-highlight">
-                        جاهز نحول فكرتك إلى محتوى بصري احترافي؟ تـــواصل معي
-                    </p>
+                    <p class="contact-highlight">جاهز نحول فكرتك إلى محتوى بصري احترافي؟ تـــواصل معي</p>
 
                     <div class="social-links">
-                        <a href="https://instagram.com/al7ajary" target="_blank">Instagram</a>
-                        <a href="https://tiktok.com/@al7ajary" target="_blank">TikTok</a>
-                        <a href="https://wa.me/97336400463" target="_blank" class="whatsapp-btn">
-                            <span>ًWhatsapp</span>
+                        <a href="https://instagram.com/al7ajary" target="_blank" rel="noopener noreferrer">Instagram</a>
+                        <a href="https://tiktok.com/@al7ajary" target="_blank" rel="noopener noreferrer">TikTok</a>
+                        <a href="https://wa.me/973336400463" target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
+                            <span>Whatsapp</span>
                         </a>
                     </div>
                 </div>
 
-               <form class="contact-form"
-      action="https://docs.google.com/forms/d/e/1FAIpQLSfvgsWTYCuB0h-gVbx2XGjGvFBqDWnDsTaiS-T6JH9G6WkBrg/formResponse"
-      method="POST"
-      target="hidden_iframe"
-      onsubmit="showFormSuccess()">
+                <form class="contact-form"
+                      action="https://docs.google.com/forms/d/e/1FAIpQLSfvgsWTYCuB0h-gVbx2XGjGvFBqDWnDsTaiS-T6JH9G6WkBrg/formResponse"
+                      method="POST"
+                      target="hidden_iframe">
+                    <label class="sr-only" for="name">Name</label>
+                    <input id="name" type="text" name="entry.1538884758" placeholder="Name" autocomplete="name" required>
 
-  <input type="text" name="entry.1538884758" placeholder="Name" required>
+                    <label class="sr-only" for="phone">Contact Number</label>
+                    <input id="phone" type="tel" name="entry.1924132049" placeholder="Contact Number" autocomplete="tel" required>
 
-  <input type="text" name="entry.1924132049" placeholder="Contact Number" required>
+                    <label class="sr-only" for="email">E-Mail</label>
+                    <input id="email" type="email" name="entry.2054595693" placeholder="E-Mail" autocomplete="email" required>
 
-  <input type="text" name="entry.2054595693" placeholder="E-Mail" required>
+                    <label class="sr-only" for="enquiry">Your Enquiry</label>
+                    <textarea id="enquiry" name="entry.1048904571" placeholder="Your Enquiry" required></textarea>
 
-  <textarea name="entry.1048904571" placeholder="Your Enquiry" required></textarea>
+                    <button type="submit">Send</button>
+                    <p id="formSuccess" class="form-success" role="status" aria-live="polite">
+                        تم ارسال الرسالة، سيتم التواصل معكم قريباً، ويمكنكم التواصل معي عبر الواتساب في أي وقت على رقم +973336400463
+                    </p>
+                </form>
 
-  <button type="submit">Send</button>
-</form>
-<iframe name="hidden_iframe" style="display:none;"></iframe>
-
+                <iframe name="hidden_iframe" title="Contact form submission" class="hidden-iframe"></iframe>
             </div>
         </section>
-
     </main>
 
-    <script src="script.js"></script>
-    <div class="cursor-glow"></div>
     <footer class="site-footer">
         <div class="footer-line"></div>
 
         <div class="footer-brand">
-            <img src="images/logo.png" alt="Ahmed Al Hajary Logo">
+            <img src="images/logo.png" alt="Ahmed Al Hajary Logo" loading="lazy">
         </div>
 
         <p class="footer-tagline">CREATED FOR VISUAL IMPACT</p>
         <p class="footer-credit">INSTAGRAM: AL7AJARY — 2026</p>
     </footer>
+
+    <script src="script.js" defer></script>
 </body>
 
 </html>

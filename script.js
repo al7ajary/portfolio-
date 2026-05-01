@@ -1,120 +1,104 @@
-const animatedElements = document.querySelectorAll(
-    ".hero-text, .hero-visual, .section, .service-card"
-);
+(() => {
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const animatedElements = document.querySelectorAll(".hero-text, .hero-visual, .section, .service-card");
 
-const observer = new IntersectionObserver(
-    (entries) => {
-        entries.forEach((entry, index) => {
-            if (entry.isIntersecting) {
-                setTimeout(() => {
-                    entry.target.classList.add("show");
-                }, index * 120);
-            }
+    if ("IntersectionObserver" in window && !prefersReducedMotion) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (!entry.isIntersecting) return;
+                window.setTimeout(() => entry.target.classList.add("show"), index * 90);
+                observer.unobserve(entry.target);
+            });
+        }, { threshold: 0.18 });
+        animatedElements.forEach((element) => {
+            element.classList.add("hidden");
+            observer.observe(element);
         });
-    },
-    {
-        threshold: 0.18,
+    } else {
+        animatedElements.forEach((element) => element.classList.add("show"));
     }
-);
 
-animatedElements.forEach((element) => {
-    element.classList.add("hidden");
-    observer.observe(element);
-});
+    window.addEventListener("load", () => {
+        const loader = document.querySelector(".loader");
+        const delay = prefersReducedMotion ? 0 : 650;
+        window.setTimeout(() => {
+            if (loader) loader.classList.add("hidden");
+            document.body.classList.add("loaded");
+        }, delay);
+    });
 
-document.addEventListener("mousemove", (e) => {
-    const x = e.clientX / window.innerWidth;
-    const y = e.clientY / window.innerHeight;
+    const scrollProgress = document.querySelector(".scroll-progress");
+    const updateScrollProgress = () => {
+        if (!scrollProgress) return;
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        scrollProgress.style.width = `${Math.min(100, Math.max(0, progress))}%`;
+    };
 
-    document.documentElement.style.setProperty("--mouse-x", `${x * 100}%`);
-    document.documentElement.style.setProperty("--mouse-y", `${y * 100}%`);
+    let scrollTicking = false;
+    window.addEventListener("scroll", () => {
+        if (scrollTicking) return;
+        window.requestAnimationFrame(() => {
+            updateScrollProgress();
+            scrollTicking = false;
+        });
+        scrollTicking = true;
+    }, { passive: true });
+    updateScrollProgress();
 
-    const logo = document.querySelector(".logo-frame");
-    if (logo) {
-        logo.style.transform = `
-      rotateX(${(y - 0.5) * -12}deg)
-      rotateY(${(x - 0.5) * 12}deg)
-      scale(1.02)
-    `;
+    const cursorGlow = document.querySelector(".cursor-glow");
+    let mouseTicking = false;
+    let mouseX = 0;
+    let mouseY = 0;
+
+    if (cursorGlow && !prefersReducedMotion && window.matchMedia("(pointer: fine)").matches) {
+        document.addEventListener("mousemove", (event) => {
+            mouseX = event.clientX;
+            mouseY = event.clientY;
+            if (mouseTicking) return;
+            window.requestAnimationFrame(() => {
+                const x = mouseX / window.innerWidth;
+                const y = mouseY / window.innerHeight;
+                document.documentElement.style.setProperty("--mouse-x", `${x * 100}%`);
+                document.documentElement.style.setProperty("--mouse-y", `${y * 100}%`);
+                cursorGlow.style.left = `${mouseX}px`;
+                cursorGlow.style.top = `${mouseY}px`;
+                mouseTicking = false;
+            });
+            mouseTicking = true;
+        }, { passive: true });
+    } else if (cursorGlow) {
+        cursorGlow.style.display = "none";
     }
-});
-window.addEventListener("load", () => {
-    const loader = document.querySelector(".loader");
 
-    setTimeout(() => {
-        loader.classList.add("hidden");
+    const revealItems = document.querySelectorAll(".section h2, .section > p, .service-card, .portfolio-card, .contact-form, .contact-info");
+    revealItems.forEach((item, index) => {
+        item.classList.add("scroll-reveal");
+        if (index % 3 === 1) item.classList.add("delay-1");
+        if (index % 3 === 2) item.classList.add("delay-2");
+    });
 
-        // يبدأ دخول الموقع
-        document.body.classList.add("loaded");
-
-    }, 2000);
-});
-const scrollProgress = document.querySelector(".scroll-progress");
-
-window.addEventListener("scroll", () => {
-    const scrollTop = window.scrollY;
-    const docHeight = document.body.scrollHeight - window.innerHeight;
-    const progress = (scrollTop / docHeight) * 100;
-
-    if (scrollProgress) {
-        scrollProgress.style.width = progress + "%";
-    }
-});
-
-const revealItems = document.querySelectorAll(
-    ".section h2, .section > p, .service-card, .portfolio-card, .contact-form, .contact-info"
-);
-
-revealItems.forEach((item, index) => {
-    item.classList.add("scroll-reveal");
-
-    if (index % 3 === 1) item.classList.add("delay-1");
-    if (index % 3 === 2) item.classList.add("delay-2");
-});
-
-const scrollObserver = new IntersectionObserver(
-    (entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
+    if ("IntersectionObserver" in window && !prefersReducedMotion) {
+        const scrollObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
                 entry.target.classList.add("active");
-            }
-        });
-    },
-    {
-        threshold: 0.18,
+                scrollObserver.unobserve(entry.target);
+            });
+        }, { threshold: 0.18 });
+        revealItems.forEach((item) => scrollObserver.observe(item));
+    } else {
+        revealItems.forEach((item) => item.classList.add("active"));
     }
-);
 
-revealItems.forEach((item) => {
-    scrollObserver.observe(item);
-});
-
-const contactForm = document.querySelector(".contact-form");
-const formSuccess = document.querySelector("#formSuccess");
-
-if (contactForm && formSuccess) {
-  contactForm.addEventListener("submit", () => {
-    formSuccess.classList.add("show");
-    contactForm.reset();
-
-    setTimeout(() => {
-      formSuccess.classList.remove("show");
-    }, 3000);
-  });
-}
-function showFormSuccess() {
-  const message = document.getElementById("formSuccess");
-  const form = document.querySelector(".contact-form");
-
-  if (!message || !form) return;
-
-  message.classList.add("show");
-
-  setTimeout(() => {
-    message.classList.remove("show");
-  }, 3500);
-
-  setTimeout(() => {
-    form.reset();
-  }, 800);
-}
+    const contactForm = document.querySelector(".contact-form");
+    const formSuccess = document.querySelector("#formSuccess");
+    if (contactForm && formSuccess) {
+        contactForm.addEventListener("submit", () => {
+            formSuccess.classList.add("show");
+            window.setTimeout(() => contactForm.reset(), 400);
+            window.setTimeout(() => formSuccess.classList.remove("show"), 3000);
+        });
+    }
+})();

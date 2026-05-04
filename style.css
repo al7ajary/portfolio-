@@ -422,8 +422,8 @@ h1 {
     border: 1px solid rgba(0, 200, 200, 0.28);
     position: relative;
     overflow: hidden;
-    background-size: 85%;
-    background-position: left 10px top 8px;
+    background-size: 95px auto;
+    background-position: left 16px top 16px;
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
@@ -474,9 +474,8 @@ h1 {
 }
 
 .service-card h3 {
-    margin: 12px 0 8px;
-    font-size: 18px;
-    line-height: 1.25;
+    font-size: 16px;
+    color: #00c8c8;
 }
 
 .service-card p {

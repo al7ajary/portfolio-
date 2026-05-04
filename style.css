@@ -1253,3 +1253,63 @@ body::before {
     pointer-events: none;
   }
 }
+.floating-social {
+    position: fixed;
+    right: 18px;
+    bottom: 46px;
+    z-index: 99998;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.floating-social a,
+.floating-social button {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 200, 200, 0.45);
+    background: rgba(10, 10, 10, 0.72);
+    color: #00c8c8;
+    display: grid;
+    place-items: center;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 14px rgba(0, 200, 200, 0.22);
+    transition: 0.25s ease;
+}
+
+.floating-social button {
+    font-size: 18px;
+    line-height: 1;
+}
+
+.floating-social a:hover,
+.floating-social button:hover {
+    background: #00c8c8;
+    color: #0A0A0A;
+    transform: translateY(-3px);
+    box-shadow: 0 0 22px rgba(0, 200, 200, 0.55);
+}
+
+@media (max-width: 520px) {
+    .floating-social {
+        right: 12px;
+        bottom: 36px;
+        gap: 7px;
+    }
+
+    .floating-social a,
+    .floating-social button {
+        width: 31px;
+        height: 31px;
+        font-size: 10px;
+    }
+
+    .floating-social button {
+        font-size: 16px;
+    }
+}

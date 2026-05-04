@@ -1313,3 +1313,17 @@ body::before {
         font-size: 16px;
     }
 }
+
+.floating-social svg {
+    width: 17px;
+    height: 17px;
+    fill: currentColor;
+    display: block;
+}
+
+@media (max-width: 520px) {
+    .floating-social svg {
+        width: 15px;
+        height: 15px;
+    }
+}

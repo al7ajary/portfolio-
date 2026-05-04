@@ -1327,3 +1327,17 @@ body::before {
         height: 15px;
     }
 }
+
+.floating-social svg {
+    width: 17px;
+    height: 17px;
+    fill: currentColor;
+    display: block;
+}
+
+@media (max-width: 520px) {
+    .floating-social svg {
+        width: 15px;
+        height: 15px;
+    }
+}
